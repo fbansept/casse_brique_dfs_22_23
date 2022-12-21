@@ -37,9 +37,9 @@ public class Fenetre extends Canvas {
 
     public void demarrer() throws InterruptedException {
 
-        Balle balle1 = new Balle(300,100, 20 ,3, 5);
-        Balle balle2 = new Balle(200,300, 20 ,4, 5);
-        Balle balle3 = new Balle(0,0, 20 ,5, 3);
+        Balle balle1 = new Balle();
+        Balle balle2 = new Balle();
+        Balle balle3 = new Balle();
 
         listeBalle.add(balle1);
         listeBalle.add(balle2);

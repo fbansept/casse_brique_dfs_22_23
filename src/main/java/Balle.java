@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.Random;
 
 public class Balle {
 
@@ -12,6 +13,19 @@ public class Balle {
     public static final int BALLE_DIAMETRE_DEFAUT = 20;
     public static final int BALLE_VITESSE_DEFAUT = 5;
     public static final Color BALLE_COULEUR_DEFAUT = Color.RED;
+
+    public Balle() {
+
+        diametre = (int)(Math.random() * 40 + 10);
+        x = (int)(Math.random() * Fenetre.LARGEUR - diametre);
+        y = (int)(Math.random() * Fenetre.HAUTEUR - diametre);
+        vitesseHorizontal = (int)(Math.random() * 6 + 1);
+        vitesseVertical = (int)(Math.random() * 6 + 1);
+        couleur = new Color(
+                (float)Math.random(),
+                (float)Math.random(),
+                (float)Math.random());
+    }
 
     public Balle(int x, int y, int diametre , int vitesseHorizontal, int vitesseVertical) {
         this.x = x;
