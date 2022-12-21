@@ -37,19 +37,14 @@ public class Fenetre extends Canvas {
 
     public void demarrer() throws InterruptedException {
 
-        Balle balle1 = new Balle();
-        Balle balle2 = new Balle();
-        Balle balle3 = new Balle();
-
-        listeBalle.add(balle1);
-        listeBalle.add(balle2);
-        listeBalle.add(balle3);
+        for(int i = 0 ; i< 100; i++) {
+            listeBalle.add(new Balle());
+        }
 
         while(true) {
 
             Graphics2D dessin = (Graphics2D) getBufferStrategy().getDrawGraphics();
             //-----------------------------
-
 
             dessin.setColor(Color.WHITE);
             dessin.fillRect(0,0,LARGEUR,HAUTEUR);

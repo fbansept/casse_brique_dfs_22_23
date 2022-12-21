@@ -1,14 +1,11 @@
 import java.awt.*;
 import java.util.Random;
 
-public class Balle {
+public class Balle extends Sprite {
 
-    private int x;
-    private int y;
     private int vitesseHorizontal;
     private int vitesseVertical;
     private int diametre;
-    private Color couleur;
 
     public static final int BALLE_DIAMETRE_DEFAUT = 20;
     public static final int BALLE_VITESSE_DEFAUT = 5;
@@ -19,8 +16,10 @@ public class Balle {
         diametre = (int)(Math.random() * 40 + 10);
         x = (int)(Math.random() * Fenetre.LARGEUR - diametre);
         y = (int)(Math.random() * Fenetre.HAUTEUR - diametre);
-        vitesseHorizontal = (int)(Math.random() * 6 + 1);
-        vitesseVertical = (int)(Math.random() * 6 + 1);
+
+        setVitesseHorizontal((int)(Math.random() * 12 - 6));
+        setVitesseVertical((int)(Math.random() * 12 - 6));
+
         couleur = new Color(
                 (float)Math.random(),
                 (float)Math.random(),
@@ -72,27 +71,14 @@ public class Balle {
         dessin.fillOval(x, y, diametre, diametre);
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
     public int getVitesseHorizontal() {
         return vitesseHorizontal;
     }
 
     public void setVitesseHorizontal(int vitesseHorizontal) {
+        if(vitesseHorizontal == 0){
+            vitesseHorizontal = 1;
+        }
         this.vitesseHorizontal = vitesseHorizontal;
     }
 
@@ -101,6 +87,9 @@ public class Balle {
     }
 
     public void setVitesseVertical(int vitesseVertical) {
+        if(vitesseVertical == 0){
+            vitesseVertical = 1;
+        }
         this.vitesseVertical = vitesseVertical;
     }
 
