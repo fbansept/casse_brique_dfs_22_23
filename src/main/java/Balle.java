@@ -5,9 +5,12 @@ public class Balle {
     private int vitesseHorizontal;
     private int vitesseVertical;
 
+    private int diametre;
+
     public Balle(int x, int y, int diametre , int vitesseHorizontal, int vitesseVertical) {
         this.x = x;
         this.y = y;
+        this.diametre = diametre;
         this.vitesseHorizontal = vitesseHorizontal;
         this.vitesseVertical = vitesseVertical;
     }
@@ -16,11 +19,11 @@ public class Balle {
         x += vitesseHorizontal;
         y += vitesseVertical;
 
-        if(x >= Fenetre.LARGEUR - 50 || x <= 0) {
+        if(x >= Fenetre.LARGEUR - diametre || x <= 0) {
             vitesseHorizontal = -vitesseHorizontal;
         }
 
-        if(y >= Fenetre.HAUTEUR - 50 || y <= 0) {
+        if(y >= Fenetre.HAUTEUR - diametre || y <= 0) {
             vitesseVertical = -vitesseVertical;
         }
     }
@@ -55,5 +58,13 @@ public class Balle {
 
     public void setVitesseVertical(int vitesseVertical) {
         this.vitesseVertical = vitesseVertical;
+    }
+
+    public int getDiametre() {
+        return diametre;
+    }
+
+    public void setDiametre(int diametre) {
+        this.diametre = diametre;
     }
 }
