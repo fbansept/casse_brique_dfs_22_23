@@ -8,12 +8,15 @@ public class Brique extends Rectangle{
     public final static int LARGEUR_DEFAUT = 40;
     public final static int HAUTEUR_DEFAUT = 30;
 
-    public Brique(int x, int y , Color couleur) {
+    public Brique(int x, int y) {
         this.x = x;
         this.y = y;
         this.largeur = LARGEUR_DEFAUT;
         this.hauteur = HAUTEUR_DEFAUT;
-        this.couleur = couleur;
+        this.couleur = new Color(
+                (float)Math.random(),
+                (float)Math.random(),
+                (float)Math.random());
     }
 
     public int getPoints() {

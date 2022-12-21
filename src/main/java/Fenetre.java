@@ -8,6 +8,7 @@ public class Fenetre extends Canvas {
     public static final int HAUTEUR = 600;
 
     private ArrayList<Balle> listeBalle = new ArrayList<>();
+    private ArrayList<Brique> listeBrique = new ArrayList<>();
     private ArrayList<Sprite> listeSprite = new ArrayList<>();
 
     private Barre barre = new Barre();
@@ -46,6 +47,17 @@ public class Fenetre extends Canvas {
             listeSprite.add(balle);
         }
         listeSprite.add(barre);
+
+        for(int i = 0; i < 11; i ++) {
+            for(int j = 0; j < 5; j ++) {
+                Brique brique = new Brique(
+                        15 + i * (Brique.LARGEUR_DEFAUT + 3),
+                        15 + j * (Brique.HAUTEUR_DEFAUT + 3));
+                listeBrique.add(brique);
+                listeSprite.add(brique);
+            }
+        }
+
 
         while(true) {
 
