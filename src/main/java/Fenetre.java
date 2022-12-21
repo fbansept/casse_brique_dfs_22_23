@@ -1,10 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Fenetre extends Canvas {
 
     public static final int LARGEUR = 500;
     public static final int HAUTEUR = 600;
+
+    public ArrayList<Balle> listeBalle = new ArrayList<>();
 
     Fenetre() throws InterruptedException {
 
@@ -34,23 +37,27 @@ public class Fenetre extends Canvas {
 
     public void demarrer() throws InterruptedException {
 
-        Balle balle = new Balle(0,0, 20 ,5, 5);
+        Balle balle1 = new Balle(300,100, 20 ,3, 5);
+        Balle balle2 = new Balle(200,300, 20 ,4, 5);
+        Balle balle3 = new Balle(0,0, 20 ,5, 3);
+
+        listeBalle.add(balle1);
+        listeBalle.add(balle2);
+        listeBalle.add(balle3);
 
         while(true) {
 
             Graphics2D dessin = (Graphics2D) getBufferStrategy().getDrawGraphics();
             //-----------------------------
 
-            //balle.setX(balle.getX() + balle.getVitesse());
-            balle.mouvement();
 
             dessin.setColor(Color.WHITE);
             dessin.fillRect(0,0,LARGEUR,HAUTEUR);
 
-            dessin.setColor(Color.RED);
-
-            balle.dessiner(dessin);
-
+            for(Balle balle : listeBalle) {
+                balle.mouvement();
+                balle.dessiner(dessin);
+            }
 
             //-----------------------------
             dessin.dispose();

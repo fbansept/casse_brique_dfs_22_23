@@ -54,6 +54,7 @@ public class Balle {
     }
 
     public void dessiner(Graphics2D dessin) {
+        dessin.setColor(couleur);
         dessin.fillOval(x, y, diametre, diametre);
     }
 
