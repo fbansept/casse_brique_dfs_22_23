@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public abstract class Sprite {
+public abstract class Sprite implements Dessinable{
 
     protected int x;
     protected int y;

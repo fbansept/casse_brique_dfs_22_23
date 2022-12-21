@@ -7,7 +7,9 @@ public class Fenetre extends Canvas {
     public static final int LARGEUR = 500;
     public static final int HAUTEUR = 600;
 
-    public ArrayList<Balle> listeBalle = new ArrayList<>();
+    private ArrayList<Balle> listeBalle = new ArrayList<>();
+
+    private Barre barre = new Barre();
 
     Fenetre() throws InterruptedException {
 
@@ -53,6 +55,8 @@ public class Fenetre extends Canvas {
                 balle.mouvement();
                 balle.dessiner(dessin);
             }
+
+            barre.dessiner(dessin);
 
             //-----------------------------
             dessin.dispose();
