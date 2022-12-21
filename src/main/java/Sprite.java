@@ -1,10 +1,12 @@
 import java.awt.*;
 
-public abstract class Sprite implements Dessinable{
+public abstract class Sprite {
 
     protected int x;
     protected int y;
     protected Color couleur;
+
+    abstract void dessiner(Graphics2D dessin);
 
     public int getX() {
         return x;

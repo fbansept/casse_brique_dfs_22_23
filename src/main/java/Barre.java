@@ -1,9 +1,6 @@
 import java.awt.*;
 
-public class Barre extends Sprite implements Dessinable {
-
-    private int largeur = 200;
-    private int hauteur = 30;
+public class Barre extends Rectangle {
 
     public Barre() {
         x = Fenetre.LARGEUR / 2 - largeur / 2;
@@ -27,9 +24,5 @@ public class Barre extends Sprite implements Dessinable {
         this.hauteur = hauteur;
     }
 
-    @Override
-    public void dessiner(Graphics2D dessin) {
-        dessin.setColor(couleur);
-        dessin.fillRect(x,y,largeur,hauteur);
-    }
+
 }
