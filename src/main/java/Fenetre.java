@@ -48,7 +48,9 @@ public class Fenetre extends Canvas {
             dessin.fillRect(0,0,LARGEUR,HAUTEUR);
 
             dessin.setColor(Color.RED);
-            dessin.fillOval(balle.getX(), balle.getY(), balle.getDiametre(), balle.getDiametre());
+
+            balle.dessiner(dessin);
+
 
             //-----------------------------
             dessin.dispose();
